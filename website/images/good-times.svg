@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a1018"/><stop offset="100%" stop-color="#050508"/></radialGradient>
+    <filter id="glow3"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)"/>
+  <!-- Ambient bar light -->
+  <circle cx="400" cy="250" r="300" fill="#e63946" opacity="0.04" filter="url(#glow3)"/>
+  <!-- Group 1 - two people laughing at bar -->
+  <circle cx="180" cy="330" r="18" fill="#e63946" opacity="0.7"/>
+  <rect x="168" y="348" width="24" height="38" fill="#e63946" rx="5" opacity="0.7"/>
+  <path d="M170 322 Q180 312 190 322" stroke="#fff" stroke-width="2" fill="none" opacity="0.5"/>
+  <circle cx="260" cy="340" r="16" fill="#ffb800" opacity="0.7"/>
+  <rect x="249" y="356" width="22" height="34" fill="#ffb800" rx="5" opacity="0.7"/>
+  <path d="M250 333 Q260 323 270 333" stroke="#fff" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Drinks between them -->
+  <rect x="220" y="370" width="10" height="18" fill="#e63946" rx="2" opacity="0.5"/>
+  <rect x="235" y="368" width="10" height="20" fill="#ffb800" rx="2" opacity="0.5"/>
+  <!-- Group 2 - cheering person -->
+  <circle cx="430" cy="320" r="17" fill="#ffb800" opacity="0.8"/>
+  <rect x="418" y="337" width="24" height="36" fill="#ffb800" rx="5" opacity="0.8"/>
+  <line x1="430" y1="305" x2="415" y2="275" stroke="#ffb800" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <line x1="430" y1="305" x2="445" y2="275" stroke="#ffb800" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <!-- Group 3 - dancing couple -->
+  <circle cx="560" cy="340" r="15" fill="#e63946" opacity="0.7"/>
+  <rect x="550" y="355" width="20" height="32" fill="#e63946" rx="5" opacity="0.7"/>
+  <circle cx="610" cy="350" r="14" fill="#ffb800" opacity="0.7"/>
+  <rect x="600" y="364" width="20" height="30" fill="#ffb800" rx="5" opacity="0.7"/>
+  <!-- Group 4 - toasting -->
+  <circle cx="320" cy="270" r="13" fill="#e63946" opacity="0.5"/>
+  <line x1="330" y1="265" x2="355" y2="245" stroke="#e63946" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="380" cy="260" r="12" fill="#ffb800" opacity="0.5"/>
+  <line x1="375" y1="255" x2="365" y2="240" stroke="#ffb800" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <!-- Glasses clinking -->
+  <rect x="352" y="240" width="6" height="10" fill="#e63946" rx="1" opacity="0.4"/>
+  <rect x="362" y="235" width="6" height="10" fill="#ffb800" rx="1" opacity="0.4"/>
+  <!-- Background bar elements -->
+  <rect x="0" y="410" width="800" height="30" fill="#151020" rx="2"/>
+  <rect x="0" y="408" width="800" height="4" fill="#e63946" opacity="0.4" filter="url(#glow3)"/>
+  <!-- Neon "GOOD TIMES" sign -->
+  <text x="400" y="100" text-anchor="middle" font-family="Impact" font-size="36" fill="#e63946" opacity="0.8" filter="url(#glow3)" letter-spacing="10">GOOD TIMES</text>
+  <!-- Bokeh effect dots -->
+  <circle cx="100" cy="150" r="20" fill="#e63946" opacity="0.06"/>
+  <circle cx="700" cy="180" r="30" fill="#ffb800" opacity="0.04"/>
+  <circle cx="150" cy="80" r="15" fill="#ffb800" opacity="0.05"/>
+  <circle cx="650" cy="100" r="25" fill="#e63946" opacity="0.04"/>
+</svg>

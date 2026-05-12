@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIN CHONIES — Official Website</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;700&family=Special+Elite&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo">
+      <img src="../Image Assets/sin chonies logo.png" alt="Sin Chonies Logo" class="nav__logo-img">
+    </a>
+    <div class="nav__links">
+      <a href="#hero" class="nav__link">Home</a>
+      <a href="#dates" class="nav__link">Shows</a>
+      <a href="#merch" class="nav__link">Merch</a>
+      <a href="#gallery" class="nav__link">Gallery</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+    <button class="nav__toggle" id="navToggle">☰</button>
+  </div>
+</nav>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
+  <div class="hero__particles" id="particles"></div>
+  <div class="hero__content">
+    <div class="hero__logo-wrap">
+      <img src="../Image Assets/strikeout logo.png" alt="Sin Chonies" class="hero__logo">
+    </div>
+    <h1 class="hero__title">SIN CHONIES</h1>
+    <p class="hero__tagline">EVERYONE'S A SINNER</p>
+    <div class="hero__cta">
+      <a href="#dates" class="btn btn--primary">UPCOMING SHOWS</a>
+      <a href="#merch" class="btn btn--secondary">SHOP MERCH</a>
+    </div>
+    <div class="hero__scroll">
+      <span>SCROLL DOWN</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </div>
+  <div class="hero__bg-image">
+    <img src="../Image Assets/everyone_s a sinner 16x9.png" alt="Everyone's a Sinner">
+  </div>
+</section>
+<!-- ===== DATES / SHOWS SECTION ===== -->
+<section class="shows" id="dates">
+  <div class="section__header">
+    <h2 class="section__title section__title--red">UPCOMING SHOWS</h2>
+    <p class="section__subtitle">CATCH US LIVE. BRING YOUR SINS.</p>
+  </div>
+
+  <div class="shows__grid">
+    <div class="show-card show-card--featured">
+      <div class="show-card__date">
+        <span class="show-card__day">24</span>
+        <span class="show-card__month">MAY</span>
+      </div>
+      <div class="show-card__info">
+        <h3 class="show-card__venue">Winchester's Grill & Saloon</h3>
+        <p class="show-card__location">Ventura, CA &mdash; Doors 8PM</p>
+        <p class="show-card__detail">w/ Special Guests TBA</p>
+      </div>
+      <a href="#" class="btn btn--ticket">TICKETS</a>
+    </div>
+
+    <div class="show-card">
+      <div class="show-card__date">
+        <span class="show-card__day">07</span>
+        <span class="show-card__month">JUN</span>
+      </div>
+      <div class="show-card__info">
+        <h3 class="show-card__venue">The Viper Room</h3>
+        <p class="show-card__location">West Hollywood, CA &mdash; Doors 9PM</p>
+        <p class="show-card__detail">$15 Advance / $20 Door</p>
+      </div>
+      <a href="#" class="btn btn--ticket">TICKETS</a>
+    </div>
+
+    <div class="show-card">
+      <div class="show-card__date">
+        <span class="show-card__day">21</span>
+        <span class="show-card__month">JUN</span>
+      </div>
+      <div class="show-card__info">
+        <h3 class="show-card__venue">SOhO Music Club</h3>
+        <p class="show-card__location">Santa Barbara, CA &mdash; Doors 8PM</p>
+        <p class="show-card__detail">Summer Solstice Show</p>
+      </div>
+      <a href="#" class="btn btn--ticket">TICKETS</a>
+    </div>
+
+    <div class="show-card">
+      <div class="show-card__date">
+        <span class="show-card__day">05</span>
+        <span class="show-card__month">JUL</span>
+      </div>
+      <div class="show-card__info">
+        <h3 class="show-card__venue">The Roxy Theatre</h3>
+        <p class="show-card__location">West Hollywood, CA &mdash; Doors 9PM</p>
+        <p class="show-card__detail">4th of July Weekend Bash</p>
+      </div>
+      <a href="#" class="btn btn--ticket">TICKETS</a>
+    </div>
+  </div>
+
+  <div class="shows__past-toggle">
+    <button class="btn btn--ghost" id="pastShowsBtn">VIEW PAST SHOWS ↓</button>
+  </div>
+  <div class="shows__past" id="pastShows" style="display:none;">
+    <div class="show-card show-card--past">
+      <div class="show-card__date"><span class="show-card__day">12</span><span class="show-card__month">APR</span></div>
+      <div class="show-card__info"><h3 class="show-card__venue">Whisky a Go Go</h3><p class="show-card__location">West Hollywood, CA</p></div>
+      <span class="show-card__status">SOLD OUT</span>
+    </div>
+    <div class="show-card show-card--past">
+      <div class="show-card__date"><span class="show-card__day">28</span><span class="show-card__month">MAR</span></div>
+      <div class="show-card__info"><h3 class="show-card__venue">The Echo</h3><p class="show-card__location">Echo Park, CA</p></div>
+      <span class="show-card__status">SOLD OUT</span>
+    </div>
+  </div>
+</section>
+<!-- ===== MERCH SECTION ===== -->
+<section class="merch" id="merch">
+  <div class="section__header">
+    <h2 class="section__title section__title--amber">MERCH</h2>
+    <p class="section__subtitle">WEAR THE SIN. SPREAD THE WORD.</p>
+  </div>
+
+  <div class="merch__grid">
+    <div class="merch-card">
+      <div class="merch-card__image">
+        <img src="../Image Assets/image.png" alt="Sin Chonies T-Shirt">
+        <div class="merch-card__overlay">
+          <span class="merch-card__price">$30</span>
+        </div>
+      </div>
+      <h3 class="merch-card__name">"Everyone's a Sinner" Tee</h3>
+      <p class="merch-card__desc">Black heavyweight cotton. Front & back print.</p>
+      <button class="btn btn--merch">ADD TO CART</button>
+    </div>
+
+    <div class="merch-card">
+      <div class="merch-card__image">
+        <img src="../Image Assets/image 2.png" alt="Sin Chonies Hoodie">
+        <div class="merch-card__overlay">
+          <span class="merch-card__price">$55</span>
+        </div>
+      </div>
+      <h3 class="merch-card__name">Strikeout Logo Hoodie</h3>
+      <p class="merch-card__desc">Black pullover. Embroidered chest logo.</p>
+      <button class="btn btn--merch">ADD TO CART</button>
+    </div>
+
+    <div class="merch-card">
+      <div class="merch-card__image">
+        <img src="../Image Assets/image 3.png" alt="Sin Chonies Hat">
+        <div class="merch-card__overlay">
+          <span class="merch-card__price">$25</span>
+        </div>
+      </div>
+      <h3 class="merch-card__name">Snapback Cap</h3>
+      <p class="merch-card__desc">Black with red embroidered logo.</p>
+      <button class="btn btn--merch">ADD TO CART</button>
+    </div>
+
+    <div class="merch-card">
+      <div class="merch-card__image">
+        <img src="../Image Assets/concert-poster.png" alt="Concert Poster">
+        <div class="merch-card__overlay">
+          <span class="merch-card__price">$15</span>
+        </div>
+      </div>
+      <h3 class="merch-card__name">Limited Edition Poster</h3>
+      <p class="merch-card__desc">18x24" matte finish. Signed by the band.</p>
+      <button class="btn btn--merch">ADD TO CART</button>
+    </div>
+  </div>
+</section>
+<!-- ===== GALLERY SECTION ===== -->
+<section class="gallery" id="gallery">
+  <div class="section__header">
+    <h2 class="section__title section__title--red">LIVE & LOUD</h2>
+    <p class="section__subtitle">CAUGHT IN THE ACT. NO SAINTS ALLOWED.</p>
+  </div>
+
+  <div class="gallery__grid">
+    <div class="gallery__item gallery__item--wide">
+      <img src="../Image Assets/ChatGPT Image Apr 27, 2026, 04_13_42 PM.png" alt="Live Performance">
+    </div>
+    <div class="gallery__item">
+      <img src="../Image Assets/ChatGPT Image Apr 27, 2026, 05_42_18 PM.png" alt="Crowd Vibes">
+    </div>
+    <div class="gallery__item">
+      <img src="../Image Assets/SCR-20260508-klky.png" alt="Band Shot">
+    </div>
+    <div class="gallery__item gallery__item--tall">
+      <img src="../Image Assets/2025 Digital Banner w_qr and logo 16x9.png" alt="2025 Banner">
+    </div>
+    <div class="gallery__item">
+      <img src="../Image Assets/2025 Digital Banner w_qr and logo 16x9 2.png" alt="Banner 2">
+    </div>
+    <div class="gallery__item">
+      <img src="../Image Assets/winchesters logo original.png" alt="Winchester's">
+    </div>
+    <div class="gallery__item">
+      <img src="images/bar-scene.svg" alt="Bar Scene">
+    </div>
+    <div class="gallery__item gallery__item--wide">
+      <img src="images/concert-crowd.svg" alt="Concert Crowd">
+    </div>
+    <div class="gallery__item">
+      <img src="images/good-times.svg" alt="Good Times">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact" id="contact">
+  <div class="section__header">
+    <h2 class="section__title section__title--amber">GET IN TOUCH</h2>
+    <p class="section__subtitle">BOOKINGS. PRESS. CONFESSIONS.</p>
+  </div>
+
+  <div class="contact__wrapper">
+    <form class="contact__form" id="contactForm">
+      <div class="contact__field">
+        <label for="name">NAME</label>
+        <input type="text" id="name" placeholder="Your name..." required>
+      </div>
+      <div class="contact__field">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" placeholder="Your email..." required>
+      </div>
+      <div class="contact__field">
+        <label for="subject">SUBJECT</label>
+        <select id="subject">
+          <option>Booking Inquiry</option>
+          <option>Press / Media</option>
+          <option>General Question</option>
+          <option>Confess Your Sins</option>
+        </select>
+      </div>
+      <div class="contact__field">
+        <label for="message">MESSAGE</label>
+        <textarea id="message" rows="5" placeholder="Tell us what's on your mind..."></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">SEND MESSAGE</button>
+    </form>
+
+    <div class="contact__social">
+      <h3>FOLLOW THE SIN</h3>
+      <div class="contact__social-links">
+        <a href="#" class="social-link social-link--instagram">Instagram</a>
+        <a href="#" class="social-link social-link--spotify">Spotify</a>
+        <a href="#" class="social-link social-link--youtube">YouTube</a>
+        <a href="#" class="social-link social-link--tiktok">TikTok</a>
+        <a href="#" class="social-link social-link--facebook">Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="../Image Assets/sin chonies logo.png" alt="Sin Chonies" class="footer__logo">
+      <p>&copy; 2026 Sin Chonies. All rights reserved.</p>
+    </div>
+    <div class="footer__links">
+      <a href="#hero">Home</a>
+      <a href="#dates">Shows</a>
+      <a href="#merch">Merch</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer__tagline">
+      <p>EVERYONE'S A SINNER</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sin Chonies — Great Music. No Panties.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Crimson+Text:ital,wght@1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #CC1100;
+      --red-hot: #E84B1C;
+      --gold: #C9A225;
+      --teal: #00B89C;
+      --black: #080808;
+      --dark: #101010;
+      --card: #161616;
+      --off-white: #F0EDE8;
+      --gray: #777;
+      --light-gray: #aaa;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── TOP STRIP ──────────────────────────────────── */
+    #top-strip {
+      background: var(--black);
+      text-align: center;
+      padding: 14px 24px 12px;
+      border-bottom: 1px solid rgba(204,17,0,0.18);
+    }
+    .top-strip-sub {
+      font-family: 'Anton', sans-serif;
+      font-size: 13px;
+      letter-spacing: 7px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .top-strip-location {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 22px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.35s, border-bottom 0.35s;
+    }
+    #navbar.pinned {
+      background: rgba(8,8,8,0.97);
+      border-bottom: 1px solid rgba(204,17,0,0.22);
+    }
+    .nav-logo img { height: 46px; filter: drop-shadow(0 0 12px rgba(204,17,0,0.4)); }
+    .nav-links { display: flex; gap: 44px; list-style: none; }
+    .nav-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-family: 'Anton', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-icon { height: 34px; opacity: 0.75; }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    #hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('Image Assets/image 2.png');
+      background-size: cover;
+      background-position: center 20%;
+      filter: brightness(0.32) saturate(1.1);
+      transform: scale(1.04);
+    }
+    .hero-vignette {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(204,17,0,0.08) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, transparent 30%, transparent 60%, rgba(8,8,8,0.85) 100%);
+    }
+    .hero-grain {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 860px;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+      opacity: 0.85;
+    }
+    .hero-logo {
+      width: 320px;
+      max-width: 65vw;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 0 50px rgba(204,17,0,0.55)) drop-shadow(0 4px 20px rgba(0,0,0,0.8));
+      animation: logoGlow 4s ease-in-out infinite alternate;
+    }
+    @keyframes logoGlow {
+      from { filter: drop-shadow(0 0 30px rgba(204,17,0,0.4)) drop-shadow(0 4px 20px rgba(0,0,0,0.8)); }
+      to   { filter: drop-shadow(0 0 60px rgba(232,75,28,0.6)) drop-shadow(0 4px 20px rgba(0,0,0,0.8)); }
+    }
+    .hero-tagline {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: clamp(20px, 3.5vw, 34px);
+      color: var(--off-white);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      opacity: 0.88;
+    }
+    .hero-rule {
+      width: 1px;
+      height: 30px;
+      background: linear-gradient(to bottom, transparent, rgba(204,17,0,0.6), transparent);
+      margin: 4px auto 18px;
+    }
+    .hero-sub {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(11px, 1.8vw, 14px);
+      letter-spacing: 7px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .hero-location {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 52px;
+    }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn { display: inline-block; text-decoration: none; cursor: pointer; border: none; font-family: 'Anton', sans-serif; letter-spacing: 4px; text-transform: uppercase; transition: all 0.22s; }
+    .btn-primary { padding: 16px 44px; background: var(--red); color: #fff; font-size: 13px; }
+    .btn-primary:hover { background: var(--red-hot); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(204,17,0,0.4); }
+    .btn-ghost { padding: 15px 44px; background: transparent; color: var(--off-white); font-size: 13px; border: 1px solid rgba(240,237,232,0.25); }
+    .btn-ghost:hover { border-color: var(--red); color: var(--red); transform: translateY(-2px); }
+
+    .scroll-cue {
+      position: absolute; bottom: 38px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      animation: scrollBounce 2.4s ease-in-out infinite;
+      color: var(--gray); font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+    }
+    .scroll-line { width: 1px; height: 52px; background: linear-gradient(to bottom, transparent, var(--red)); }
+    @keyframes scrollBounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* ─── ATMOSPHERE STRIP ───────────────────────────── */
+    #vibe {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 280px;
+      overflow: hidden;
+    }
+    .vibe-cell {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .vibe-cell img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.45) saturate(0.75);
+      transition: filter 0.45s ease, transform 0.45s ease;
+      display: block;
+    }
+    .vibe-cell:hover img { filter: brightness(0.65) saturate(1.15); transform: scale(1.06); }
+    .vibe-label {
+      position: absolute; bottom: 18px; left: 20px;
+      font-family: 'Crimson Text', serif; font-style: italic;
+      font-size: 15px; color: rgba(240,237,232,0.55);
+      pointer-events: none;
+    }
+    .vibe-placeholder { background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+    .vibe-ph-text {
+      font-family: 'Anton', sans-serif;
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+    .vibe-cell::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.5) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* ─── SECTION COMMON ─────────────────────────────── */
+    .section-wrap { max-width: 1100px; margin: 0 auto; }
+    section { padding: 100px 48px; }
+    .section-head { text-align: center; margin-bottom: 64px; }
+    .eyebrow { display: block; font-size: 10px; letter-spacing: 7px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(54px, 9vw, 104px);
+      line-height: 0.92;
+      color: var(--off-white);
+      letter-spacing: 2px;
+    }
+    .title-rule { width: 52px; height: 2px; background: var(--red); margin: 22px auto 0; }
+
+    /* ─── NEXT SHOW ──────────────────────────────────── */
+    #next-show {
+      background: var(--dark);
+      padding: 90px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    #next-show::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(204,17,0,0.35), transparent);
+    }
+    .next-show-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .next-show-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: 0.9;
+      color: var(--off-white);
+      letter-spacing: 2px;
+      margin-bottom: 36px;
+    }
+    .next-show-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .next-show-detail-row {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .nsd-label {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      min-width: 70px;
+    }
+    .nsd-value {
+      font-family: 'Anton', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: var(--off-white);
+    }
+    .next-show-sub {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 32px;
+    }
+    .next-show-posters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .poster-sq {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .poster-tall {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .poster-sq:hover, .poster-tall:hover { transform: scale(1.02); }
+
+    @media (max-width: 768px) {
+      #next-show { padding: 60px 24px; }
+      .next-show-inner { grid-template-columns: 1fr; gap: 36px; }
+      .next-show-posters { grid-template-columns: 1fr 1fr; max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .next-show-posters { grid-template-columns: 1fr; }
+      .poster-tall { display: none; }
+    }
+
+    /* ─── BIO ────────────────────────────────────────── */
+    #bio {
+      background: var(--black);
+      padding: 90px 48px;
+      text-align: center;
+    }
+    .bio-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    #bio .eyebrow { margin-bottom: 28px; }
+    .bio-text {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: clamp(20px, 2.8vw, 26px);
+      line-height: 1.7;
+      color: var(--off-white);
+      margin-bottom: 28px;
+    }
+    .bio-kicker {
+      font-family: 'Anton', sans-serif;
+      font-size: 15px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ─── SHOWS ──────────────────────────────────────── */
+    #shows {
+      background: var(--dark);
+      position: relative;
+    }
+    #shows::before, #shows::after {
+      content: '';
+      position: absolute; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(204,17,0,0.35), transparent);
+    }
+    #shows::before { top: 0; }
+    #shows::after  { bottom: 0; }
+
+    .shows-list {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .show-row {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 22px 28px;
+      background: rgba(255,255,255,0.025);
+      border-left: 3px solid transparent;
+      transition: background 0.22s, border-color 0.22s, transform 0.22s;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .show-row.visible { opacity: 1; transform: translateY(0); }
+    .show-row:hover {
+      background: rgba(204,17,0,0.07);
+      border-left-color: var(--red);
+      transform: translateX(4px);
+    }
+    .show-row.tonight {
+      border-left-color: var(--red);
+      background: rgba(204,17,0,0.1);
+    }
+    .show-row.tonight .show-date-num { color: var(--red); }
+
+    .show-date-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      color: var(--off-white);
+    }
+    .show-date-day {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .show-venue {
+      font-family: 'Anton', sans-serif;
+      font-size: 19px;
+      letter-spacing: 1px;
+      color: var(--off-white);
+      margin-bottom: 4px;
+    }
+    .show-meta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .show-city { font-size: 12px; color: var(--gray); letter-spacing: 0.5px; }
+    .show-time-tag {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--teal);
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid rgba(0,184,156,0.25);
+    }
+
+    .tonight-pill {
+      background: var(--red);
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      padding: 7px 16px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(204,17,0,0.5); }
+      50%      { box-shadow: 0 0 0 8px rgba(204,17,0,0); }
+    }
+    .ticket-link {
+      padding: 9px 22px;
+      border: 1px solid rgba(240,237,232,0.18);
+      color: var(--light-gray);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .ticket-link:hover { border-color: var(--red); color: var(--red); }
+
+    /* ─── POSTER CALLOUT ─────────────────────────────── */
+    #poster-callout {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+      overflow: hidden;
+    }
+    .poster-img-panel {
+      position: relative;
+      overflow: hidden;
+    }
+    .poster-img-panel img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .poster-img-panel:hover img { transform: scale(1.03); }
+    .poster-text-panel {
+      background: var(--red);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 56px;
+    }
+    .poster-text-panel .eyebrow { color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+    .poster-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 0.95;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .poster-sub {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .btn-white { background: #fff; color: var(--red); }
+    .btn-white:hover { background: var(--off-white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+    /* ─── MERCH ──────────────────────────────────────── */
+    #merch { background: var(--black); }
+    .merch-lead {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 56px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--gray);
+      letter-spacing: 0.3px;
+    }
+    .merch-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .merch-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--card);
+    }
+    .merch-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+      position: relative;
+    }
+    .merch-img-wrap img {
+      max-width: 75%;
+      max-height: 75%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+      filter: brightness(0.82);
+    }
+    .merch-card:hover .merch-img-wrap img { transform: scale(1.05); filter: brightness(0.65); }
+    .merch-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.3) 45%, transparent 70%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 24px;
+    }
+    .merch-tag { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+    .merch-name { font-family: 'Anton', sans-serif; font-size: 24px; letter-spacing: 1px; color: #fff; margin-bottom: 8px; }
+    .merch-price { font-size: 13px; color: var(--gold); letter-spacing: 1px; }
+    .merch-cta {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -40%);
+      opacity: 0;
+      padding: 13px 28px;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Anton', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.3s, transform 0.3s;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    .merch-card:hover .merch-cta { opacity: 1; transform: translate(-50%, -50%); }
+
+    .merch-wide {
+      grid-column: 1 / -1;
+      background: var(--dark);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border-top: 1px solid rgba(204,17,0,0.15);
+      margin-top: 3px;
+    }
+    .merch-wide-text h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .merch-wide-text p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* ─── CONTACT ────────────────────────────────────── */
+    #contact {
+      background: var(--dark);
+      position: relative;
+    }
+    #contact::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(204,17,0,0.35), transparent);
+    }
+    .contact-layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-left h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 44px;
+      letter-spacing: 2px;
+      line-height: 1.0;
+      margin-bottom: 20px;
+    }
+    .contact-left p { font-size: 14px; line-height: 1.85; color: var(--gray); margin-bottom: 40px; }
+    .contact-links { display: flex; flex-direction: column; gap: 14px; }
+    .clink {
+      display: flex; align-items: center; gap: 14px;
+      color: var(--off-white); text-decoration: none;
+      font-size: 13px; letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .clink:hover { color: var(--red); }
+    .clink-icon {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .clink:hover .clink-icon { border-color: var(--red); }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .flabel { display: block; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 7px; }
+    .finput, .ftextarea {
+      width: 100%;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--off-white);
+      padding: 13px 15px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .finput:focus, .ftextarea:focus { border-color: rgba(204,17,0,0.6); background: rgba(255,255,255,0.05); }
+    .ftextarea { height: 110px; resize: vertical; }
+    .finput::placeholder, .ftextarea::placeholder { color: var(--gray); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      padding: 36px 48px;
+      background: #040404;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo img { height: 38px; opacity: 0.55; }
+    .footer-center { text-align: center; flex: 1; }
+    .footer-copy { font-size: 11px; letter-spacing: 2px; color: #444; margin-bottom: 4px; }
+    .footer-slogan { font-family: 'Anton', sans-serif; font-size: 10px; letter-spacing: 4px; color: rgba(204,17,0,0.4); text-transform: uppercase; }
+    .footer-icon img { height: 28px; opacity: 0.3; }
+
+    /* ─── TICKER ─────────────────────────────────────── */
+    .ticker-wrap {
+      background: var(--red);
+      overflow: hidden;
+      padding: 12px 0;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker-inner span {
+      font-family: 'Anton', sans-serif;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      padding: 0 40px;
+    }
+    .ticker-inner span.dot { color: rgba(255,255,255,0.4); padding: 0 12px; }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+
+    /* Tablet: 768px and below */
+    @media (max-width: 768px) {
+
+      /* Nav */
+      #navbar { padding: 16px 24px; }
+      .nav-links { gap: 24px; }
+      .nav-links a { font-size: 11px; letter-spacing: 2px; }
+      .nav-icon { height: 26px; }
+
+      /* Hero */
+      section#hero { min-height: 100svh; }
+      .hero-logo { width: 88vw; max-width: 380px; }
+      .hero-location { font-size: 9px; letter-spacing: 3px; }
+      .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+      .btn { padding: 15px 36px; font-size: 12px; }
+
+      /* Atmosphere strip */
+      #vibe { grid-template-columns: repeat(2, 1fr); height: 220px; }
+
+      /* Shows */
+      section { padding: 72px 24px; }
+      .show-row {
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px 16px;
+        padding: 18px 20px;
+      }
+      .show-row .ticket-link,
+      .show-row .tonight-pill {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: -4px;
+      }
+      .show-date-num { font-size: 24px; }
+      .show-venue { font-size: 16px; }
+
+      /* Poster callout */
+      #poster-callout { grid-template-columns: 1fr; min-height: unset; }
+      .poster-img-panel { height: 260px; }
+      .poster-text-panel { padding: 44px 32px; }
+      .poster-headline { font-size: 48px; }
+
+      /* Merch */
+      .merch-grid { grid-template-columns: repeat(2, 1fr); }
+      .merch-wide { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
+
+      /* Contact */
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+
+      /* Footer */
+      footer { flex-direction: column; text-align: center; padding: 32px 24px; }
+    }
+
+    /* Mobile: 480px and below */
+    @media (max-width: 480px) {
+
+      /* Nav — collapse links to save space */
+      #navbar { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
+      .nav-icon { display: none; }
+
+      /* Hero */
+      .hero-logo { width: 92vw; }
+      .hero-sub { font-size: 10px; letter-spacing: 5px; }
+
+      /* Atmosphere strip — single row of 2, tighter */
+      #vibe { height: 180px; }
+      .vibe-label { font-size: 12px; bottom: 12px; left: 12px; }
+
+      /* Shows — tighten further */
+      .show-row { padding: 16px; gap: 10px 14px; }
+      .show-date-num { font-size: 20px; }
+      .show-date-day { font-size: 9px; letter-spacing: 2px; }
+      .show-venue { font-size: 14px; }
+      .show-time-tag { font-size: 9px; padding: 2px 6px; }
+      .tonight-pill { font-size: 9px; padding: 5px 12px; }
+      .section-title { letter-spacing: 1px; }
+
+      /* Merch — single column */
+      .merch-grid { grid-template-columns: 1fr; }
+
+      /* Poster */
+      .poster-headline { font-size: 38px; }
+      .poster-sub { font-size: 15px; }
+      .poster-text-panel { padding: 36px 24px; }
+
+      /* Contact */
+      .contact-left h3 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <nav id="navbar">
+<ul class="nav-links">
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <img class="nav-icon" src="Image Assets/strikeout logo.png" alt="No Panties">
+  </nav>
+
+  <!-- ── TICKER ──────────────────────────────────────── -->
+  <div class="ticker-wrap" style="position: fixed; top: 0; left: 0; right: 0; z-index: 199; display: none;" id="ticker-bar">
+    <div class="ticker-inner" id="ticker-content"></div>
+  </div>
+
+  <!-- ── TOP STRIP ───────────────────────────────────── -->
+  <div id="top-strip">
+    <p class="top-strip-sub">Great Music &nbsp;·&nbsp; No Panties</p>
+    <p class="top-strip-location">Ventura &nbsp;·&nbsp; Oxnard &nbsp;·&nbsp; Santa Barbara &nbsp;·&nbsp; Beyond</p>
+  </div>
+
+  <!-- ── HERO ────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-grain"></div>
+
+    <div class="hero-content">
+      <img class="hero-logo" src="Image Assets/sin chonies logo.png" alt="Sin Chonies">
+      <div class="hero-rule"></div>
+      <div class="hero-ctas">
+        <a href="#shows" class="btn btn-primary">See Shows</a>
+        <a href="#merch" class="btn btn-ghost">Get Merch</a>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── ATMOSPHERE STRIP ─────────────────────────────── -->
+  <div id="vibe">
+    <div class="vibe-cell vibe-placeholder"><span class="vibe-ph-text">Placeholder</span></div>
+    <div class="vibe-cell vibe-placeholder"><span class="vibe-ph-text">Placeholder</span></div>
+    <div class="vibe-cell vibe-placeholder"><span class="vibe-ph-text">Placeholder</span></div>
+    <div class="vibe-cell vibe-placeholder"><span class="vibe-ph-text">Placeholder</span></div>
+  </div>
+
+  <!-- ── NEXT SHOW ───────────────────────────────────── -->
+  <section id="next-show">
+    <div class="next-show-inner">
+      <div class="next-show-text">
+        <span class="eyebrow">Up Next</span>
+        <h2 class="next-show-title">Next Show</h2>
+        <div class="next-show-details">
+          <div class="next-show-detail-row">
+            <span class="nsd-label">Date</span>
+            <span class="nsd-value">Saturday, May 23</span>
+          </div>
+          <div class="next-show-detail-row">
+            <span class="nsd-label">Venue</span>
+            <span class="nsd-value">The Garage</span>
+          </div>
+          <div class="next-show-detail-row">
+            <span class="nsd-label">Address</span>
+            <span class="nsd-value">1091 Scandia Ave, Ventura, CA</span>
+          </div>
+          <div class="next-show-detail-row">
+            <span class="nsd-label">Time</span>
+            <span class="nsd-value">8:30 PM</span>
+          </div>
+          <div class="next-show-detail-row">
+            <span class="nsd-label">Cover</span>
+            <span class="nsd-value" style="color:var(--teal);">No Cover</span>
+          </div>
+        </div>
+        <p class="next-show-sub">Hot Rods &nbsp;·&nbsp; Cold Drinks &nbsp;·&nbsp; Bad Decisions</p>
+        <a href="https://maps.apple.com/?address=1091+Scandia+Ave,Ventura,CA" target="_blank" class="btn btn-primary">Get Directions</a>
+      </div>
+      <div class="next-show-posters">
+        <img src="Image Assets/the garage 5-23-26.png" alt="The Garage May 23 Flyer" class="poster-sq">
+        <img src="Image Assets/the garage 2 5-23-26.png" alt="The Garage May 23 Flyer 2" class="poster-tall">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BIO ─────────────────────────────────────────── -->
+  <section id="bio">
+    <div class="bio-inner">
+      <span class="eyebrow">Who We Are</span>
+      <p class="bio-text">We are a professional throwback cover band known for making people drink, dance, and sing. Covering a wide range of chart-topping hits from the 80s, 90s, Y2K and beyond — we want to make you dance and sing along at the top of your lungs.</p>
+      <p class="bio-kicker">Silliness is mandatory.</p>
+    </div>
+  </section>
+
+  <!-- ── SHOWS ────────────────────────────────────────── -->
+  <section id="shows">
+    <div class="section-head">
+      <span class="eyebrow">2026 Schedule</span>
+      <h2 class="section-title">Upcoming<br>Shows</h2>
+      <div class="title-rule"></div>
+    </div>
+
+    <div class="shows-list" id="showsList">
+
+      <div class="show-row tonight" data-delay="0">
+        <div>
+          <div class="show-date-num">MAY 8</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">Bombay Bar</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">6:00 PM</span>
+          </div>
+        </div>
+        <span class="tonight-pill">Tonight!</span>
+      </div>
+
+      <div class="show-row" data-delay="60">
+        <div>
+          <div class="show-date-num">MAY 23</div>
+          <div class="show-date-day">Saturday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Garage</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">8:30 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="90">
+        <div>
+          <div class="show-date-num">JUN 19</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">Cruisery SB</div>
+          <div class="show-meta">
+            <span class="show-city">Santa Barbara, CA</span>
+            <span class="show-time-tag">9:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="120">
+        <div>
+          <div class="show-date-num">JUN 26</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Shores</div>
+          <div class="show-meta">
+            <span class="show-city">Oxnard, CA</span>
+            <span class="show-time-tag">9:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="150">
+        <div>
+          <div class="show-date-num">JUL 3</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">Dukes</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">6:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="180">
+        <div>
+          <div class="show-date-num">JUL 10</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">Winchester's</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">7:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="210">
+        <div>
+          <div class="show-date-num">JUL 23</div>
+          <div class="show-date-day">Thursday</div>
+        </div>
+        <div>
+          <div class="show-venue">Validation</div>
+          <div class="show-meta">
+            <span class="show-city">Santa Barbara, CA</span>
+            <span class="show-time-tag">6:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="240">
+        <div>
+          <div class="show-date-num">AUG 22</div>
+          <div class="show-date-day">Saturday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Shores</div>
+          <div class="show-meta">
+            <span class="show-city">Oxnard, CA</span>
+            <span class="show-time-tag">9:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="270">
+        <div>
+          <div class="show-date-num">SEP 12</div>
+          <div class="show-date-day">Saturday</div>
+        </div>
+        <div>
+          <div class="show-venue">Azar's</div>
+          <div class="show-meta">
+            <span class="show-city">Newbury Park, CA</span>
+            <span class="show-time-tag">8:30 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="300">
+        <div>
+          <div class="show-date-num">SEP 26</div>
+          <div class="show-date-day">Saturday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Garage</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">8:30 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="330">
+        <div>
+          <div class="show-date-num">NOV 13</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Garage</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">8:30 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="360">
+        <div>
+          <div class="show-date-num">DEC 26</div>
+          <div class="show-date-day">Saturday</div>
+        </div>
+        <div>
+          <div class="show-venue">The Shores</div>
+          <div class="show-meta">
+            <span class="show-city">Oxnard, CA</span>
+            <span class="show-time-tag">9:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── POSTER CALLOUT ───────────────────────────────── -->
+  <div id="poster-callout">
+    <div class="poster-img-panel">
+      <img src="Image Assets/the garage 2 5-23-26.png" alt="Sin Chonies at The Garage">
+    </div>
+    <div class="poster-text-panel">
+      <span class="eyebrow">Live &amp; Loud</span>
+      <h2 class="poster-headline">Great Music.<br>No Panties.<br>All Night.</h2>
+      <p class="poster-sub">Sin Chonies brings the heat every time we step on stage. Raw energy, real songs, zero pretense — and a strict no-chonies policy.</p>
+      <a href="#contact" class="btn btn-white">Book Us for Your Venue</a>
+    </div>
+  </div>
+
+  <!-- ── MERCH ─────────────────────────────────────────── -->
+  <section id="merch">
+    <div class="section-head">
+      <span class="eyebrow">Rep the Brand</span>
+      <h2 class="section-title">Merch</h2>
+      <div class="title-rule"></div>
+    </div>
+    <p class="merch-lead">Wear your sin with pride. Limited runs, real quality — designed for people who show up and get loud.</p>
+
+    <div class="merch-grid">
+
+      <div class="merch-card">
+        <div class="merch-img-wrap" style="background: #181414;">
+          <img src="Image Assets/the garage 5-23-26.png" alt="Classic Tee">
+        </div>
+        <div class="merch-overlay">
+          <div class="merch-tag">Apparel</div>
+          <div class="merch-name">Classic Tee</div>
+          <div class="merch-price">$28</div>
+        </div>
+        <a href="#" class="merch-cta">Add to Cart</a>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-img-wrap" style="background: #141818;">
+          <img src="Image Assets/everyone_s a sinner 16x9.png" alt="Sinner Hoodie">
+        </div>
+        <div class="merch-overlay">
+          <div class="merch-tag">Apparel</div>
+          <div class="merch-name">Sinner Hoodie</div>
+          <div class="merch-price">$55</div>
+        </div>
+        <a href="#" class="merch-cta">Add to Cart</a>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-img-wrap" style="background: #161616;">
+          <img src="Image Assets/strikeout logo.png" alt="No Panties Sticker Pack" style="max-width: 55%;">
+        </div>
+        <div class="merch-overlay">
+          <div class="merch-tag">Accessories</div>
+          <div class="merch-name">No Panties Sticker Pack</div>
+          <div class="merch-price">$8</div>
+        </div>
+        <a href="#" class="merch-cta">Add to Cart</a>
+      </div>
+
+      <div class="merch-wide">
+        <div class="merch-wide-text">
+          <h3>Custom Orders &amp; Bundles</h3>
+          <p>Want something specific? Hit us up for custom runs, show bundles, or bulk orders. We'll make it happen.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-head">
+      <span class="eyebrow">Hit Us Up</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="title-rule"></div>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-left">
+        <h3>Book us.<br>Collab.<br>Say hey.</h3>
+        <p>For booking, private events, press, merch questions, or just to tell us we ripped — reach out. We're based in Ventura, CA and play all over the 805 and beyond.</p>
+        <div class="contact-links">
+          <a href="mailto:sin.chonies.inc@gmail.com" class="clink">
+            <div class="clink-icon">✉</div>
+            sin.chonies.inc@gmail.com
+          </a>
+          <a href="https://instagram.com/sin_chonies" target="_blank" class="clink">
+            <div class="clink-icon" style="font-size:11px; font-family:'Anton',sans-serif; letter-spacing:1px;">IG</div>
+            @sin_chonies
+          </a>
+          <a href="https://facebook.com/sinchonies" target="_blank" class="clink">
+            <div class="clink-icon" style="font-size:11px; font-family:'Anton',sans-serif; letter-spacing:1px;">FB</div>
+            facebook.com/sinchonies
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div>
+          <label class="flabel">Your Name</label>
+          <input type="text" class="finput" placeholder="First &amp; Last">
+        </div>
+        <div>
+          <label class="flabel">Email</label>
+          <input type="email" class="finput" placeholder="your@email.com">
+        </div>
+        <div>
+          <label class="flabel">Subject</label>
+          <input type="text" class="finput" placeholder="Booking / Merch / General">
+        </div>
+        <div>
+          <label class="flabel">Message</label>
+          <textarea class="ftextarea" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; padding:17px; cursor:pointer;">Send It</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-logo">
+      <img src="Image Assets/sin chonies logo.png" alt="Sin Chonies">
+    </div>
+    <div class="footer-center">
+      <div class="footer-copy">© 2026 Sin Chonies &nbsp;·&nbsp; Ventura, CA</div>
+      <div class="footer-slogan">Great Music. No Panties.</div>
+    </div>
+    <div class="footer-icon">
+      <img src="Image Assets/strikeout logo.png" alt="">
+    </div>
+  </footer>
+
+  <script>
+    // ── Sticky nav ──────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 72) {
+        navbar.classList.add('pinned');
+      } else {
+        navbar.classList.remove('pinned');
+      }
+    });
+
+    // ── Scroll-reveal for show rows ─────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.delay || 0);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+            entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease, background 0.22s, border-color 0.22s';
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.show-row').forEach(row => observer.observe(row));
+
+    // ── Merch card image fallback ───────────────────────
+    document.querySelectorAll('.merch-img-wrap img').forEach(img => {
+      img.onerror = function() {
+        this.style.display = 'none';
+        const icon = document.createElement('div');
+        icon.style.cssText = 'font-size:42px; opacity:0.2; text-align:center;';
+        icon.textContent = '🎸';
+        this.parentElement.appendChild(icon);
+      };
+    });
+
+    // ── Tonight ticker (shows once user scrolls past hero) ──
+    const heroEl = document.getElementById('hero');
+    const tickerBar = document.getElementById('ticker-bar');
+
+    // Build ticker content
+    const msgs = [
+      'Tonight at Bombay Bar Ventura 6PM',
+      '★',
+      'Great Music · No Panties',
+      '★',
+      'Sin Chonies Live',
+      '★',
+      'May 8 · Get Out There',
+      '★',
+    ];
+    const content = (msgs.map(m => `<span>${m}</span>`).join('') ).repeat(4);
+    document.getElementById('ticker-content').innerHTML = content;
+
+    // We don't show the ticker by default — it's a design element ready to enable
+    // Uncomment below to activate it as a show announcement banner:
+    // window.addEventListener('scroll', () => {
+    //   tickerBar.style.display = window.scrollY > window.innerHeight ? 'block' : 'none';
+    // });
+  </script>
+
+</body>
+</html>

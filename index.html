@@ -308,42 +308,26 @@
       margin-bottom: 32px;
     }
     .next-show-posters {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      display: block;
       align-items: start;
     }
-    .poster-sq {
+    .poster-wide {
       width: 100%;
       max-width: 100%;
       height: auto;
-      aspect-ratio: 1;
-      object-fit: cover;
+      aspect-ratio: 40 / 21;
+      object-fit: contain;
       border-radius: 2px;
       box-shadow: 0 8px 40px rgba(0,0,0,0.6);
       transition: transform 0.3s ease;
       display: block;
     }
-    .poster-tall {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 2px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease;
-      display: block;
-    }
-    .poster-sq:hover, .poster-tall:hover { transform: scale(1.02); }
+    .poster-wide:hover { transform: scale(1.02); }
 
     @media (max-width: 768px) {
       #next-show { padding: 60px 24px; }
       .next-show-inner { grid-template-columns: 1fr; gap: 36px; }
-      .next-show-posters { grid-template-columns: 1fr 1fr; max-width: 100%; }
-    }
-    @media (max-width: 480px) {
-      .next-show-posters { grid-template-columns: 1fr; }
-      .poster-tall { display: none; }
+      .next-show-posters { max-width: 100%; }
     }
 
     /* ─── BIO ────────────────────────────────────────── */
@@ -878,19 +862,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value">Saturday, May 23</span>
+            <span class="nsd-value">Fri, May 22nd</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value">The Garage</span>
+            <span class="nsd-value">Leashless Brewing</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Address</span>
-            <span class="nsd-value">1091 Scandia Ave, Ventura, CA</span>
+            <span class="nsd-value">585 E Thompson Blvd, Ventura, CA</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value">8:30 PM</span>
+            <span class="nsd-value">6pm-9pm</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Cover</span>
@@ -898,11 +882,10 @@
           </div>
         </div>
         <p class="next-show-sub">Hot Rods &nbsp;·&nbsp; Cold Drinks &nbsp;·&nbsp; Bad Decisions</p>
-        <a href="https://maps.apple.com/?address=1091+Scandia+Ave,Ventura,CA" target="_blank" class="btn btn-primary">Get Directions</a>
+        <a href="https://maps.apple.com/?address=585+E+Thompson+Blvd,Ventura,CA" target="_blank" class="btn btn-primary">Get Directions</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/the garage 5-23-26.png" alt="The Garage May 23 Flyer" class="poster-sq">
-        <img src="Image Assets/the garage 2 5-23-26.png" alt="The Garage May 23 Flyer 2" class="poster-tall">
+        <img src="Image Assets/leashless generic 16x9.jpg" alt="Sin Chonies live at Leashless flyer" class="poster-wide">
       </div>
     </div>
   </section>
@@ -943,6 +926,21 @@
 
       <div class="show-row" data-delay="60">
         <div>
+          <div class="show-date-num">MAY 22</div>
+          <div class="show-date-day">Friday</div>
+        </div>
+        <div>
+          <div class="show-venue">Leashless Brewing</div>
+          <div class="show-meta">
+            <span class="show-city">Ventura, CA</span>
+            <span class="show-time-tag">6:00 PM - 9:00 PM</span>
+          </div>
+        </div>
+        <a href="#" class="ticket-link">Info</a>
+      </div>
+
+      <div class="show-row" data-delay="90">
+        <div>
           <div class="show-date-num">MAY 23</div>
           <div class="show-date-day">Saturday</div>
         </div>
@@ -956,7 +954,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="90">
+      <div class="show-row" data-delay="120">
         <div>
           <div class="show-date-num">JUN 19</div>
           <div class="show-date-day">Friday</div>
@@ -971,7 +969,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="120">
+      <div class="show-row" data-delay="150">
         <div>
           <div class="show-date-num">JUN 26</div>
           <div class="show-date-day">Friday</div>
@@ -986,7 +984,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="150">
+      <div class="show-row" data-delay="180">
         <div>
           <div class="show-date-num">JUL 3</div>
           <div class="show-date-day">Friday</div>
@@ -1001,7 +999,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="180">
+      <div class="show-row" data-delay="210">
         <div>
           <div class="show-date-num">JUL 10</div>
           <div class="show-date-day">Friday</div>
@@ -1016,7 +1014,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="210">
+      <div class="show-row" data-delay="240">
         <div>
           <div class="show-date-num">JUL 23</div>
           <div class="show-date-day">Thursday</div>
@@ -1031,7 +1029,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="240">
+      <div class="show-row" data-delay="270">
         <div>
           <div class="show-date-num">AUG 22</div>
           <div class="show-date-day">Saturday</div>
@@ -1046,7 +1044,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="270">
+      <div class="show-row" data-delay="300">
         <div>
           <div class="show-date-num">SEP 12</div>
           <div class="show-date-day">Saturday</div>
@@ -1061,7 +1059,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="300">
+      <div class="show-row" data-delay="330">
         <div>
           <div class="show-date-num">SEP 26</div>
           <div class="show-date-day">Saturday</div>
@@ -1076,7 +1074,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="330">
+      <div class="show-row" data-delay="360">
         <div>
           <div class="show-date-num">NOV 13</div>
           <div class="show-date-day">Friday</div>
@@ -1091,7 +1089,7 @@
         <a href="#" class="ticket-link">Info</a>
       </div>
 
-      <div class="show-row" data-delay="360">
+      <div class="show-row" data-delay="390">
         <div>
           <div class="show-date-num">DEC 26</div>
           <div class="show-date-day">Saturday</div>

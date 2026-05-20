@@ -18,6 +18,7 @@
       --off-white: #F0EDE8;
       --gray: #777;
       --light-gray: #aaa;
+      --top-strip-height: 62px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,22 +55,31 @@
 
     /* ─── NAV ─────────────────────────────────────────── */
     #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: absolute;
+      top: var(--top-strip-height); left: 0; right: 0;
       z-index: 200;
       padding: 22px 48px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       background: transparent;
       transition: background 0.35s, border-bottom 0.35s;
     }
     #navbar.pinned {
+      position: fixed;
+      top: 0;
       background: rgba(8,8,8,0.97);
       border-bottom: 1px solid rgba(204,17,0,0.22);
     }
     .nav-logo img { height: 46px; filter: drop-shadow(0 0 12px rgba(204,17,0,0.4)); }
-    .nav-links { display: flex; gap: 44px; list-style: none; }
+    .nav-links {
+      position: absolute;
+      left: 50vw;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 44px;
+      list-style: none;
+    }
     .nav-links a {
       color: var(--off-white);
       text-decoration: none;
@@ -1260,6 +1270,15 @@
   <script>
     // ── Sticky nav ──────────────────────────────────────
     const navbar = document.getElementById('navbar');
+    const topStrip = document.getElementById('top-strip');
+
+    const syncTopStripHeight = () => {
+      document.documentElement.style.setProperty('--top-strip-height', `${topStrip.offsetHeight}px`);
+    };
+
+    syncTopStripHeight();
+    window.addEventListener('resize', syncTopStripHeight);
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 72) {
         navbar.classList.add('pinned');

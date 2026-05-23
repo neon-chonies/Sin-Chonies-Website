@@ -332,6 +332,10 @@
       transition: transform 0.3s ease;
       display: block;
     }
+    .poster-square {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
     .poster-wide:hover { transform: scale(1.02); }
 
     @media (max-width: 768px) {
@@ -895,7 +899,7 @@
         <a href="https://maps.apple.com/?address=1091+Scandia+Ave,Ventura,CA" target="_blank" class="btn btn-primary">Get Directions</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/the garage 2 5-23-26.png" alt="Sin Chonies live at The Garage flyer" class="poster-wide">
+        <img src="Image Assets/the garage 2 5-23-26.png" alt="Sin Chonies live at The Garage flyer" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -919,7 +923,7 @@
 
     <div class="shows-list" id="showsList">
 
-      <div class="show-row" data-delay="0">
+      <div class="show-row tonight" data-delay="0">
         <div>
           <div class="show-date-num">MAY 23</div>
           <div class="show-date-day">Saturday</div>
@@ -931,7 +935,7 @@
             <span class="show-time-tag">8:30 PM</span>
           </div>
         </div>
-        <a href="#" class="ticket-link">Info</a>
+        <a href="https://maps.apple.com/?address=1091+Scandia+Ave,Ventura,CA" target="_blank" class="ticket-link">Info</a>
       </div>
 
       <div class="show-row" data-delay="60">

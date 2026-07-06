@@ -880,15 +880,15 @@
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">Winchesters</span>
+            <span class="nsd-value" id="next-show-venue">Winchester's</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">Ventura</span>
+            <span class="nsd-value" id="next-show-location">632 East Main Street, Ventura</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">7 PM</span>
+            <span class="nsd-value" id="next-show-time">7 PM - 10 PM</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Music</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/dukes-july-3-2026-flyer.png" alt="Sin Chonies live at Duke's Beach Grill on July 3, 2026" class="poster-wide poster-square">
+        <img src="Image Assets/winchesters-july-10-2026-flyer.png" alt="Sin Chonies live at Winchester's on Friday, July 10, 2026 from 7 PM to 10 PM" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1149,6 +1149,11 @@
 
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
+    const nextShowSpotlight = {
+      venue: "Winchester's",
+      location: '632 East Main Street, Ventura',
+      time: '7 PM - 10 PM',
+    };
 
     const buildShowMarkup = (gig, index) => {
       const safeVenue = gig.venue;
@@ -1176,9 +1181,9 @@
     const nextGig = gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
-      document.getElementById('next-show-venue').textContent = nextGig.venue;
-      document.getElementById('next-show-location').textContent = nextGig.city || 'TBA';
-      document.getElementById('next-show-time').textContent = nextGig.time;
+      document.getElementById('next-show-venue').textContent = nextShowSpotlight.venue || nextGig.venue;
+      document.getElementById('next-show-location').textContent = nextShowSpotlight.location || nextGig.city || 'TBA';
+      document.getElementById('next-show-time').textContent = nextShowSpotlight.time || nextGig.time;
     }
 
     // ── Scroll-reveal for show rows ─────────────────────

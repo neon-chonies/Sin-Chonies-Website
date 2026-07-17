@@ -876,19 +876,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Fri, Jul 10th</span>
+            <span class="nsd-value" id="next-show-date">Fri, Jul 17th</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">Winchester's</span>
+            <span class="nsd-value" id="next-show-venue">The Cruisery</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">632 East Main Street, Ventura</span>
+            <span class="nsd-value" id="next-show-location">501 State St, Santa Barbara</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">7 PM - 10 PM</span>
+            <span class="nsd-value" id="next-show-time">9 PM</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Music</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/winchesters-july-10-2026-flyer.png" alt="Sin Chonies live at Winchester's on Friday, July 10, 2026 from 7 PM to 10 PM" class="poster-wide poster-square">
+        <img src="Image Assets/updated cruisery flyer.png" alt="Sin Chonies live at The Cruisery in Santa Barbara on Friday, July 17, 2026 at 9 PM" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1081,8 +1081,6 @@
     });
 
     const bookedGigs = [
-      'FRI 7-10-26 @7PM — Winchesters, Ventura',
-      'SAT 7-11-26 @6PM — Bombay, Ventura',
       'FRI 7-17-26 @9PM — The Cruisery, Santa Barbara',
       'THU 7-23-26 @6PM — Validation, Santa Barbara',
       'FRI 8-21-26 @9PM — The Cruisery, Santa Barbara',
@@ -1150,9 +1148,9 @@
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
     const nextShowSpotlight = {
-      venue: "Winchester's",
-      location: '632 East Main Street, Ventura',
-      time: '7 PM - 10 PM',
+      venue: 'The Cruisery',
+      location: '501 State St, Santa Barbara',
+      time: '9 PM',
     };
 
     const buildShowMarkup = (gig, index) => {

@@ -876,30 +876,30 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Fri, Jul 17th</span>
+            <span class="nsd-value" id="next-show-date">Thu, Jul 23rd</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">The Cruisery</span>
+            <span class="nsd-value" id="next-show-venue">Validation</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">501 State St, Santa Barbara</span>
+            <span class="nsd-value" id="next-show-location">Santa Barbara</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">9 PM</span>
+            <span class="nsd-value" id="next-show-time">6 PM</span>
           </div>
           <div class="next-show-detail-row">
-            <span class="nsd-label">Music</span>
-            <span class="nsd-value" style="color:var(--teal);">Long Live the 90's</span>
+            <span class="nsd-label">Ages</span>
+            <span class="nsd-value" style="color:var(--teal);">All Ages</span>
           </div>
         </div>
-        <p class="next-show-sub">Alt Rock &nbsp;·&nbsp; Hip-Hop &nbsp;·&nbsp; Indie &nbsp;·&nbsp; Pop</p>
+        <p class="next-show-sub">Long Live the 90's &nbsp;·&nbsp; Rock &nbsp;·&nbsp; Indie &nbsp;·&nbsp; Alternative</p>
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/updated cruisery flyer.png" alt="Sin Chonies live at The Cruisery in Santa Barbara on Friday, July 17, 2026 at 9 PM" class="poster-wide poster-square">
+        <img src="Image Assets/Validation Insta 7:23:26.PNG" alt="Sin Chonies live at Validation in Santa Barbara on Thursday, July 23, 2026 at 6 PM. All ages." class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1081,7 +1081,6 @@
     });
 
     const bookedGigs = [
-      'FRI 7-17-26 @9PM — The Cruisery, Santa Barbara',
       'THU 7-23-26 @6PM — Validation, Santa Barbara',
       'FRI 8-21-26 @9PM — The Cruisery, Santa Barbara',
       'SAT 8-22-26 @9PM — The Shores, Oxnard',
@@ -1148,9 +1147,9 @@
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
     const nextShowSpotlight = {
-      venue: 'The Cruisery',
-      location: '501 State St, Santa Barbara',
-      time: '9 PM',
+      venue: 'Validation',
+      location: 'Santa Barbara',
+      time: '6 PM',
     };
 
     const buildShowMarkup = (gig, index) => {

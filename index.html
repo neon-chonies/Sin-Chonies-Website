@@ -876,15 +876,15 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Fri, Aug 21st</span>
+            <span class="nsd-value" id="next-show-date">Sat, Aug 22nd</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">The Cruisery</span>
+            <span class="nsd-value" id="next-show-venue">The Shores</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">Santa Barbara</span>
+            <span class="nsd-value" id="next-show-location">Oxnard</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/Cruisery Insta Flyer.png" alt="Sin Chonies live at The Cruisery in Santa Barbara on Friday, August 21, 2026 at 9 PM." class="poster-wide poster-square">
+        <img src="Image Assets/sin-chonies-live-backdrop.jpg" alt="Sin Chonies performing live" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1081,7 +1081,6 @@
     });
 
     const bookedGigs = [
-      'FRI 8-21-26 @9PM — The Cruisery, Santa Barbara',
       'SAT 8-22-26 @9PM — The Shores, Oxnard',
       'SAT 9-26-26 @8:30PM — Garage, Ventura',
       'SAT 10-10-26 — TBA',
@@ -1145,8 +1144,8 @@
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
     const nextShowSpotlight = {
-      venue: 'The Cruisery',
-      location: 'Santa Barbara',
+      venue: 'The Shores',
+      location: 'Oxnard',
       time: '9 PM',
     };
 

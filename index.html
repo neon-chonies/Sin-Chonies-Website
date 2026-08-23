@@ -876,19 +876,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Sat, Oct 10th</span>
+            <span class="nsd-value" id="next-show-date">Sat, Dec 26th</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">TBA</span>
+            <span class="nsd-value" id="next-show-venue">The Shores</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">TBA</span>
+            <span class="nsd-value" id="next-show-location">Oxnard</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">TBA</span>
+            <span class="nsd-value" id="next-show-time">9 PM</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Ages</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/sin-chonies-live-backdrop.jpg" alt="Sin Chonies performing live" class="poster-wide poster-square">
+        <img src="Image Assets/the-shores-december-26-2026-flyer.png" alt="Sin Chonies live at The Shores in Oxnard on Saturday, December 26, 2026 at 9 PM" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1142,9 +1142,9 @@
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
     const nextShowSpotlight = {
-      venue: 'TBA',
-      location: 'TBA',
-      time: 'TBA',
+      venue: 'The Shores',
+      location: 'Oxnard',
+      time: '9 PM',
     };
 
     const buildShowMarkup = (gig, index) => {
@@ -1170,7 +1170,7 @@
 
     showsList.innerHTML = gigs.map(buildShowMarkup).join('');
 
-    const nextGig = gigs[0];
+    const nextGig = gigs.find(gig => gig.venue !== 'TBA' && gig.time !== 'TBA') || gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
       document.getElementById('next-show-venue').textContent = nextShowSpotlight.venue || nextGig.venue;

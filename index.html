@@ -876,19 +876,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Sat, Dec 26th</span>
+            <span class="nsd-value" id="next-show-date">Fri, Dec 18th</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">The Shores</span>
+            <span class="nsd-value" id="next-show-venue">Sewer</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">Oxnard</span>
+            <span class="nsd-value" id="next-show-location">Ventura</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">9 PM</span>
+            <span class="nsd-value" id="next-show-time">5 PM</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Ages</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/the-shores-december-26-2026-flyer.png" alt="Sin Chonies live at The Shores in Oxnard on Saturday, December 26, 2026 at 9 PM" class="poster-wide poster-square">
+        <img src="Image Assets/sin-chonies-live-backdrop.jpg" alt="Sin Chonies live at Sewer in Ventura on Friday, December 18, 2026 at 5 PM" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1082,6 +1082,7 @@
 
     const bookedGigs = [
       'SAT 10-10-26 — TBA',
+      'FRI 12-18-26 @5PM — Sewer, Ventura',
       'SAT 12-26-26 @9PM — The Shores, Oxnard',
     ];
 
@@ -1142,9 +1143,9 @@
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
     const nextShowSpotlight = {
-      venue: 'The Shores',
-      location: 'Oxnard',
-      time: '9 PM',
+      venue: 'Sewer',
+      location: 'Ventura',
+      time: '5 PM',
     };
 
     const buildShowMarkup = (gig, index) => {

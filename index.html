@@ -876,19 +876,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Sat, Nov 21st</span>
+            <span class="nsd-value" id="next-show-date">Sat, Dec 26th</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">Winchesters</span>
+            <span class="nsd-value" id="next-show-venue">The Shores</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">Ventura</span>
+            <span class="nsd-value" id="next-show-location">Oxnard</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">7 PM</span>
+            <span class="nsd-value" id="next-show-time">9 PM</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Ages</span>
@@ -899,7 +899,7 @@
         <a href="#shows" class="btn btn-primary">See All Shows</a>
       </div>
       <div class="next-show-posters">
-        <img src="Image Assets/winchesters-november-21-2026-flyer.png" alt="Sin Chonies live at Winchesters in Ventura on Saturday, November 21, 2026 at 7 PM" class="poster-wide poster-square">
+        <img src="Image Assets/the-shores-december-26-2026-flyer.png" alt="Sin Chonies live at The Shores in Oxnard on Saturday, December 26, 2026 at 9 PM" class="poster-wide poster-square">
       </div>
     </div>
   </section>
@@ -1081,13 +1081,9 @@
     });
 
     const bookedGigs = [
-      'TUE 10-20-26 — TBA',
       'WED 10-21-26 — TBA',
       'THU 10-22-26 — TBA',
       'FRI 10-30-26 — TBA',
-      'SAT 11-21-26 @7PM — Winchesters, Ventura',
-      'WED 11-25-26 — TBA',
-      'SAT 11-28-26 — TBA',
       'SAT 12-26-26 @9PM — The Shores, Oxnard',
     ];
 
@@ -1147,11 +1143,6 @@
 
     const gigs = bookedGigs.map(parseGig).filter(Boolean);
     const showsList = document.getElementById('showsList');
-    const nextShowSpotlight = {
-      venue: 'Winchesters',
-      location: 'Ventura',
-      time: '7 PM',
-    };
 
     const buildShowMarkup = (gig, index) => {
       const safeVenue = gig.venue;
@@ -1179,9 +1170,9 @@
     const nextGig = gigs.find(gig => gig.venue !== 'TBA' && gig.time !== 'TBA') || gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
-      document.getElementById('next-show-venue').textContent = nextShowSpotlight.venue || nextGig.venue;
-      document.getElementById('next-show-location').textContent = nextShowSpotlight.location || nextGig.city || 'TBA';
-      document.getElementById('next-show-time').textContent = nextShowSpotlight.time || nextGig.time;
+      document.getElementById('next-show-venue').textContent = nextGig.venue;
+      document.getElementById('next-show-location').textContent = nextGig.city || 'TBA';
+      document.getElementById('next-show-time').textContent = nextGig.time;
     }
 
     // ── Scroll-reveal for show rows ─────────────────────

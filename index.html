@@ -876,19 +876,19 @@
         <div class="next-show-details">
           <div class="next-show-detail-row">
             <span class="nsd-label">Date</span>
-            <span class="nsd-value" id="next-show-date">Sat, Dec 26th</span>
+            <span class="nsd-value" id="next-show-date">Fri, Nov 20th</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Venue</span>
-            <span class="nsd-value" id="next-show-venue">The Shores</span>
+            <span class="nsd-value" id="next-show-venue">TBA</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Location</span>
-            <span class="nsd-value" id="next-show-location">Oxnard</span>
+            <span class="nsd-value" id="next-show-location">TBA</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Time</span>
-            <span class="nsd-value" id="next-show-time">9 PM</span>
+            <span class="nsd-value" id="next-show-time">TBA</span>
           </div>
           <div class="next-show-detail-row">
             <span class="nsd-label">Ages</span>
@@ -1167,8 +1167,9 @@
 
     showsList.innerHTML = gigs.map(buildShowMarkup).join('');
 
-    // Keep TBA dates in the public schedule, but only promote a confirmed show.
-    const nextGig = gigs.find((gig) => gig.venue !== 'TBA' && gig.time !== 'TBA');
+    // Promote the first calendar booking, including TBA details, so this panel
+    // always matches the source-of-truth schedule.
+    const nextGig = gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
       document.getElementById('next-show-venue').textContent = nextGig.venue;

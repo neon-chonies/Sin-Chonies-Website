@@ -1167,8 +1167,8 @@
 
     showsList.innerHTML = gigs.map(buildShowMarkup).join('');
 
-    // Promote the first concrete booking; calendar holds without venue or time stay in the full schedule.
-    const nextGig = gigs.find((gig) => gig.venue !== 'TBA' && gig.city !== 'TBA' && gig.time !== 'TBA');
+    // Use the first calendar booking, including TBA details, so this card stays in sync with the schedule.
+    const nextGig = gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
       document.getElementById('next-show-venue').textContent = nextGig.venue;

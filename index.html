@@ -1166,8 +1166,8 @@
 
     showsList.innerHTML = gigs.map(buildShowMarkup).join('');
 
-    // Keep the Next Show aligned with the earliest calendar booking, including holds.
-    const nextGig = gigs[0];
+    // Promote the earliest confirmed show; TBA holds stay in the full schedule.
+    const nextGig = gigs.find((gig) => gig.venue !== 'TBA' && gig.time !== 'TBA');
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
       document.getElementById('next-show-venue').textContent = nextGig.venue;

@@ -1081,7 +1081,6 @@
     });
 
     const bookedGigs = [
-      'FRI 11-20-26 — TBA',
       'SAT 11-28-26 — TBA',
       'SAT 12-26-26 @9PM — The Shores, Oxnard',
       'SAT 2-20-27 @8PM — Azars, Newbury Park',
@@ -1167,8 +1166,8 @@
 
     showsList.innerHTML = gigs.map(buildShowMarkup).join('');
 
-    // Promote the first concrete booking; TBA entries remain visible in the full schedule.
-    const nextGig = gigs.find((gig) => gig.venue !== 'TBA' && gig.time !== 'TBA');
+    // Keep the Next Show aligned with the earliest calendar booking, including holds.
+    const nextGig = gigs[0];
     if (nextGig) {
       document.getElementById('next-show-date').textContent = `${nextGig.dayAbbr.charAt(0)}${nextGig.dayAbbr.slice(1).toLowerCase()}, ${nextGig.monthDisplay} ${formatOrdinal(nextGig.dayNum)}`;
       document.getElementById('next-show-venue').textContent = nextGig.venue;
